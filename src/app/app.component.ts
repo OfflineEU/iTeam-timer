@@ -4,8 +4,7 @@ import {buffer, debounceTime, filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',git remote add origin https://github.com/OfflineEU/iTeam-timer.git
-  git push -u origin master
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 
