@@ -1,0 +1,45 @@
+<div class="header">
+
+  <h1>Timer</h1>
+
+</div>
+
+<div class="container">
+
+  <p *ngIf="!started; else subStart">
+    {{date | date:'HH:mm:ss'}}
+  </p>
+  <ng-template #subStart>
+    <p>
+      {{date | date:'HH:mm:ss'}}
+    </p>
+  </ng-template>
+  <p *ngIf="completed">Время вышло!</p>
+
+  <div class="control-block">
+    <button
+      class="btn"
+      (click)="toggle()"
+      [disabled]="completed"
+    ><span *ngIf="!started; else btnStop"
+    >Start</span>
+
+      <ng-template #btnStop>
+        <span>Stop</span>
+      </ng-template>
+    </button>
+
+    <button
+      class="btn"
+      id="waitBtn"
+      [disabled]="!subscription"
+    >Wait</button>
+
+    <button
+      class="btn"
+      (click)="reset()"
+    >Reset
+    </button>
+  </div>
+
+</div>
